@@ -1,38 +1,49 @@
 # homebrew-tap
 
-Homebrew formulae for [zoxy](https://github.com/zoxy-io/zoxy),
-[zrk](https://github.com/zoxy-io/zrk), and [zurl](https://github.com/zoxy-io/zurl).
+Homebrew formulae for [zgix](https://github.com/chy3xyz/zgix) — a
+zero-allocation L4/L7 edge proxy in Zig — plus snapshots of
+[zrk](https://github.com/zoxy-io/zrk) (load generator) and
+[zurl](https://github.com/zoxy-io/zurl) (HTTP/1.1 client).
 
 ## Install
 
 ```sh
-brew tap zoxy-io/tap
-brew install zoxy               # zero-allocation L4/L7 edge proxy (prebuilt binaries)
-brew install zrk                # constant-throughput HTTP load generator (prebuilt binaries)
-brew install zoxy-io/tap/zurl   # std.Io-native HTTP/1.1 client (prebuilt binaries)
+brew tap chy3xyz/tap
+brew install zgix                # zero-allocation L4/L7 edge proxy (prebuilt binaries)
+brew install zrk                 # constant-throughput HTTP load generator (prebuilt binaries)
+brew install chy3xyz/tap/zurl    # std.Io-native HTTP/1.1 client (prebuilt binaries)
 ```
 
-`zurl` needs the fully-qualified `zoxy-io/tap/zurl` name: `homebrew/core` already has
-an unrelated `zurl` (fanout's ZeroMQ-based HTTP/WebSocket proxy worker), and a bare
-`brew install zurl` resolves there instead, pulling in `qtbase`/`zeromq` and five
-other dependencies that have nothing to do with this one. `zoxy` and `zrk` have no
-such collision.
+`zurl` needs the fully-qualified `chy3xyz/tap/zurl` name: `homebrew/core`
+already has an unrelated `zurl` (fanout's ZeroMQ-based HTTP/WebSocket proxy
+worker), and a bare `brew install zurl` resolves there instead, pulling in
+`qtbase`/`zeromq` and five other dependencies that have nothing to do with
+this one. `zgix` and `zrk` have no such collision.
+
+## Migration notes
+
+This tap moved from `zoxy-io/homebrew-tap` when the proxy project renamed
+zoxy → zgix and its canonical home became
+[chy3xyz/zgix](https://github.com/chy3xyz/zgix). Consequences:
+
+- The old `zoxy` formula stayed behind on the old tap for pre-rename
+  binaries; this tap ships `zgix` starting with its first release here.
+- `zrk` and `zurl` formulae here are snapshots: those projects still
+  publish to `zoxy-io/homebrew-tap` from their own release workflows, so
+  check the old tap for their latest versions.
 
 ## Formulae
 
 | Formula | Source | Notes |
 | ------- | ------ | ----- |
-| `zoxy` | prebuilt release binaries from `zoxy-io/zoxy` | macOS/Linux, arm64 + x86_64 |
-| `zrk` | prebuilt release binaries from `zoxy-io/zrk` | macOS/Linux, arm64 + x86_64 |
-| `zurl` | prebuilt release binaries from `zoxy-io/zurl` | macOS/Linux, arm64 + x86_64; name collides with `homebrew/core/zurl`, see above |
-
-Each of `zoxy`, `zrk` and `zurl` has a `.github/workflows/release.yml` in its
-own repo that pushes here automatically on a tag, using a write-access
-deploy key scoped to that repo (`<repo>-release-bot`, stored as that repo's
-`HOMEBREW_TAP_DEPLOY_KEY` secret).
+| `zgix` | prebuilt release binaries from `chy3xyz/zgix` | macOS/Linux, arm64 + x86_64 |
+| `zrk` | prebuilt release binaries from `zoxy-io/zrk` | snapshot; canonical tap `zoxy-io/tap` |
+| `zurl` | prebuilt release binaries from `zoxy-io/zurl` | snapshot; collides with `homebrew/core/zurl`, see above |
 
 ## Updating
 
-Automatic, via each repo's `release.yml`. To update any of them by hand,
-bump `version` and the four `sha256` values from the release's
-`SHA256SUMS.txt`.
+`zgix` updates automatically: `chy3xyz/zgix`'s
+`.github/workflows/release.yml` pushes here on every tag, using a
+write-access deploy key (`zgix-release-bot`, stored as that repo's
+`HOMEBREW_TAP_DEPLOY_KEY` secret). To update any formula by hand, bump
+`version` and the four `sha256` values from the release's `SHA256SUMS.txt`.
