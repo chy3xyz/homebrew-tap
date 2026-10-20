@@ -1,8 +1,9 @@
 # homebrew-tap
 
 Homebrew formulae for [zgix](https://github.com/chy3xyz/zgix) — a
-zero-allocation L4/L7 edge proxy in Zig — plus snapshots of
-[zrk](https://github.com/zoxy-io/zrk) (load generator) and
+zero-allocation L4/L7 edge proxy in Zig — plus
+[zdoc](https://github.com/chy3xyz/zdoc) (documentation sites from Markdown),
+snapshots of [zrk](https://github.com/zoxy-io/zrk) (load generator) and
 [zurl](https://github.com/zoxy-io/zurl) (HTTP/1.1 client), and the
 [zmodu](https://github.com/chy3xyz/zmodu) framework's CLI.
 
@@ -10,6 +11,8 @@ zero-allocation L4/L7 edge proxy in Zig — plus snapshots of
 
 ```sh
 brew tap chy3xyz/tap
+brew trust chy3xyz/tap          # once per machine; Homebrew ignores untrusted taps
+brew install zdoc                # documentation sites from a folder of Markdown
 brew install zgix                # zero-allocation L4/L7 edge proxy (prebuilt binaries)
 brew install zrk                 # constant-throughput HTTP load generator (prebuilt binaries)
 brew install chy3xyz/tap/zurl    # std.Io-native HTTP/1.1 client (prebuilt binaries)
@@ -20,7 +23,7 @@ brew install zmodu               # framework CLI (built from source; needs Zig 0
 already has an unrelated `zurl` (fanout's ZeroMQ-based HTTP/WebSocket proxy
 worker), and a bare `brew install zurl` resolves there instead, pulling in
 `qtbase`/`zeromq` and five other dependencies that have nothing to do with
-this one. `zgix` and `zrk` have no such collision.
+this one. `zdoc`, `zgix` and `zrk` have no such collision.
 
 ## Migration notes
 
@@ -38,6 +41,7 @@ zoxy → zgix and its canonical home became
 
 | Formula | Source | Notes |
 | ------- | ------ | ----- |
+| `zdoc` | prebuilt release binaries from `chy3xyz/zdoc` | macOS/Linux, arm64 + x86_64 |
 | `zmodu` | source tarball from `chy3xyz/zmodu` | builds the CLI with `zig`; framework itself is fetched by consumers via `build.zig.zon` |
 | `zgix` | prebuilt release binaries from `chy3xyz/zgix` | macOS/Linux, arm64 + x86_64 |
 | `zrk` | prebuilt release binaries from `zoxy-io/zrk` | snapshot; canonical tap `zoxy-io/tap` |
