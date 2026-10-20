@@ -12,22 +12,22 @@ class Zmodu < Formula
   on_macos do
     on_arm do
       url "https://github.com/chy3xyz/zmodu/releases/download/v#{version}/zmodu-#{version}-aarch64-macos.tar.gz"
-      sha256 "bf3dd6e8bbc684ae25c42809f7ec4a96659792af2beec6c085bb9e74ecfcc077"
+      sha256 "0c146610d5932a1347beaaaf71224cdb86b3c1d8a2f4440f60220db2af18a58b"
     end
     on_intel do
       url "https://github.com/chy3xyz/zmodu/releases/download/v#{version}/zmodu-#{version}-x86_64-macos.tar.gz"
-      sha256 "81ad1f2b30bbf908f7b5bdb3f20cfabf15d678b05971c613cd395272d00adc3c"
+      sha256 "0ea72304fc480f2aa8d2a39f657bb4e9ef421c57edbd11a7e9884a29ec6d113c"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/chy3xyz/zmodu/releases/download/v#{version}/zmodu-#{version}-aarch64-linux.tar.gz"
-      sha256 "a42f0a0ae72de54ce35ee1746634fe7f9c2034f536072667bced36ead2ece325"
+      sha256 "fc551498b8dd4a011d4f03ed35382cdad9563eabd2758c61eacc5ba0879b1443"
     end
     on_intel do
       url "https://github.com/chy3xyz/zmodu/releases/download/v#{version}/zmodu-#{version}-x86_64-linux.tar.gz"
-      sha256 "230bc87c149c460ebdaf01d6ee1f442f5f451ee8cc3fbf4e56005011dc9e8d22"
+      sha256 "aa446dea1a687459d781ead525d1b5548750472c13067d7d29f39c9c47547934"
     end
   end
 
