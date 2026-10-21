@@ -10,23 +10,23 @@ class Zdoc < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/chy3xyz/zdoc/releases/download/v0.16.2/aarch64-macos.zip"
-      sha256 "7169715a3ac61b98d81e218462568cab287448abd46a1b7b04dd046fc0ce274c"
+      url "https://github.com/chy3xyz/zdoc/releases/download/v0.17.0/aarch64-macos.zip"
+      sha256 "48c1a79924020f50d5ce5dd62cc710ccc74ad959e95a31cb6e624c7bd1a5806a"
     end
     on_intel do
-      url "https://github.com/chy3xyz/zdoc/releases/download/v0.16.2/x86_64-macos.zip"
-      sha256 "dd06e49148c6d4487757b434fae17335018b7e9bf498fa9906f2c7a065219e85"
+      url "https://github.com/chy3xyz/zdoc/releases/download/v0.17.0/x86_64-macos.zip"
+      sha256 "81a63dd7913d55c92b3d244bd2930844d38c7eefb8fb0665f4e52fe4bd7ea27c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/chy3xyz/zdoc/releases/download/v0.16.2/aarch64-linux-musl.tar.xz"
-      sha256 "314706d2c5bdcfdc14fd8b4517382955d17dc41cd26bc9a2de7d9564239f2b4c"
+      url "https://github.com/chy3xyz/zdoc/releases/download/v0.17.0/aarch64-linux-musl.tar.xz"
+      sha256 "96f3834fc0df9058708b9c49dffd1ccc7e6d17fc9ce4f3fdae04a396e1a222fb"
     end
     on_intel do
-      url "https://github.com/chy3xyz/zdoc/releases/download/v0.16.2/x86_64-linux-musl.tar.xz"
-      sha256 "6f0fd393be6d85ce45c47c39a9451ac689bc604f7751e743dd2ae821b0daf819"
+      url "https://github.com/chy3xyz/zdoc/releases/download/v0.17.0/x86_64-linux-musl.tar.xz"
+      sha256 "7f1ceb21773739facf7d2d9edef226bf30fd9d56aee28c15d874f4e473fc9bd6"
     end
   end
 
