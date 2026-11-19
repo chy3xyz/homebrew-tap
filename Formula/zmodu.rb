@@ -1,7 +1,7 @@
 class Zmodu < Formula
   desc "Compile-time modular application framework and runtime for Zig (CLI)"
   homepage "https://github.com/chy3xyz/zmodu"
-  version "0.42.0"
+  version "0.43.7"
   license "MIT"
 
   livecheck do
@@ -12,22 +12,22 @@ class Zmodu < Formula
   on_macos do
     on_arm do
       url "https://github.com/chy3xyz/zmodu/releases/download/v#{version}/zmodu-#{version}-aarch64-macos.tar.gz"
-      sha256 "0c146610d5932a1347beaaaf71224cdb86b3c1d8a2f4440f60220db2af18a58b"
+      sha256 "f619e01bcf02a81ca9b02dcafe9a6ab7c0be94e4a9c79789ad87450ea5f5eb2f"
     end
     on_intel do
       url "https://github.com/chy3xyz/zmodu/releases/download/v#{version}/zmodu-#{version}-x86_64-macos.tar.gz"
-      sha256 "0ea72304fc480f2aa8d2a39f657bb4e9ef421c57edbd11a7e9884a29ec6d113c"
+      sha256 "e48b9234edb2c373d82f6e45157edefb937ea9ee250dff55a1553042f9b47d8d"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/chy3xyz/zmodu/releases/download/v#{version}/zmodu-#{version}-aarch64-linux.tar.gz"
-      sha256 "fc551498b8dd4a011d4f03ed35382cdad9563eabd2758c61eacc5ba0879b1443"
+      sha256 "b6b5ac1f7e7ef00e15a118269292b676c6f6fca0d80a76a5903a4bcf10221cc6"
     end
     on_intel do
       url "https://github.com/chy3xyz/zmodu/releases/download/v#{version}/zmodu-#{version}-x86_64-linux.tar.gz"
-      sha256 "aa446dea1a687459d781ead525d1b5548750472c13067d7d29f39c9c47547934"
+      sha256 "fa2db9d7cb36a04de7e1f715759e0cddd8d26d4b4dc516770fb09ec92d1c9786"
     end
   end
 
